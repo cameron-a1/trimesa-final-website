@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trimesa-peso-fund.manus.space/sitemap.xml

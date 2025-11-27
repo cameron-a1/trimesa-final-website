@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* TriMesa Brand Colors: Navy #0C1E2C, Gold #C9A646, Slate #4E5D6C, Off-white #F9FAFB */
+  --navy: 12 30 44;
+  --gold: 201 166 70;
+  --slate: 78 93 108;
+  --off-white: 249 250 251;
+  
+  --primary: rgb(var(--gold));
+  --primary-foreground: rgb(var(--navy));
+  --sidebar-primary: rgb(var(--gold));
+  --sidebar-primary-foreground: rgb(var(--navy));
+  --chart-1: rgb(201 166 70 / 0.3);
+  --chart-2: rgb(201 166 70 / 0.5);
+  --chart-3: rgb(201 166 70 / 0.7);
+  --chart-4: rgb(201 166 70 / 0.9);
+  --chart-5: rgb(201 166 70);
+  --radius: 0.5rem;
+  --background: rgb(var(--off-white));
+  --foreground: rgb(var(--navy));
+  --card: rgb(255 255 255);
+  --card-foreground: rgb(var(--navy));
+  --popover: rgb(255 255 255);
+  --popover-foreground: rgb(var(--navy));
+  --secondary: rgb(var(--slate));
+  --secondary-foreground: rgb(255 255 255);
+  --muted: rgb(243 244 246);
+  --muted-foreground: rgb(var(--slate));
+  --accent: rgb(var(--gold));
+  --accent-foreground: rgb(var(--navy));
+  --destructive: rgb(239 68 68);
+  --destructive-foreground: rgb(255 255 255);
+  --border: rgb(229 231 235);
+  --input: rgb(229 231 235);
+  --ring: rgb(var(--gold));
+  --sidebar: rgb(255 255 255);
+  --sidebar-foreground: rgb(var(--navy));
+  --sidebar-accent: rgb(243 244 246);
+  --sidebar-accent-foreground: rgb(var(--navy));
+  --sidebar-border: rgb(229 231 235);
+  --sidebar-ring: rgb(var(--gold));
+}
+
+.dark {
+  /* Dark theme not used for this institutional site */
+  --primary: rgb(var(--gold));
+  --primary-foreground: rgb(var(--navy));
+  --sidebar-primary: rgb(var(--gold));
+  --sidebar-primary-foreground: rgb(var(--navy));
+  --background: rgb(var(--navy));
+  --foreground: rgb(var(--off-white));
+  --card: rgb(20 40 52);
+  --card-foreground: rgb(var(--off-white));
+  --popover: rgb(20 40 52);
+  --popover-foreground: rgb(var(--off-white));
+  --secondary: rgb(var(--slate));
+  --secondary-foreground: rgb(255 255 255);
+  --muted: rgb(30 50 62);
+  --muted-foreground: rgb(156 163 175);
+  --accent: rgb(var(--gold));
+  --accent-foreground: rgb(var(--navy));
+  --destructive: rgb(239 68 68);
+  --destructive-foreground: rgb(255 255 255);
+  --border: rgb(55 65 81);
+  --input: rgb(55 65 81);
+  --ring: rgb(var(--gold));
+  --chart-1: rgb(201 166 70 / 0.3);
+  --chart-2: rgb(201 166 70 / 0.5);
+  --chart-3: rgb(201 166 70 / 0.7);
+  --chart-4: rgb(201 166 70 / 0.9);
+  --chart-5: rgb(201 166 70);
+  --sidebar: rgb(20 40 52);
+  --sidebar-foreground: rgb(var(--off-white));
+  --sidebar-accent: rgb(30 50 62);
+  --sidebar-accent-foreground: rgb(var(--off-white));
+  --sidebar-border: rgb(55 65 81);
+  --sidebar-ring: rgb(var(--gold));
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans', sans-serif;
+  }
+  .font-data {
+    font-family: 'Inter', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+}
