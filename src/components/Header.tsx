@@ -17,13 +17,13 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-border sticky top-0 z-50">
-      <nav className="container flex items-center justify-between py-3 md:py-2 lg:py-1">
+    <header className="bg-white border-b border-border sticky top-0 z-50 w-full">
+      <nav className="container flex items-center justify-between h-[70px] md:h-[78px]">
         <Link href="/" className="flex items-center">
           <img
             src="/brand/trimesa-logo-transparent.png"
             alt="TriMesa Capital Partners"
-            className="h-48 md:h-52 lg:h-56 xl:h-60 w-auto max-w-full object-contain"
+            className="h-24 md:h-28 lg:h-32 xl:h-36 w-auto object-contain"
           />
         </Link>
 
